@@ -1,0 +1,14 @@
+git init
+git add .
+#git commit -m "Jul 22"
+
+git commit -m 'Jan 26, 23' -- Ras_Pie
+
+#git branch -M "main"
+#git remote add project3 https://github.com/pj4269/project3.git
+
+git push -u project3 "main"
+
+
+user: pj4269
+pass: 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
