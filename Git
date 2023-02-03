@@ -1,13 +1,17 @@
 git init
+# Please tell us who you are
+# git config user.name 'micah'
+# git config user.email 'contact_micah@yahoo.com'
+
 git add .
 #git commit -m "Jul 22"
 
 git commit -m 'Jan 26, 23' -- Ras_Pie
 
 #git branch -M "main"
-#git remote add project3 https://github.com/pj4269/project3.git
+#git remote add Ras_Pie  https://github.com/pj4269/Ras_Pie.git
 
-git push -u project3 "main"
+git push -u Ras_Pie main
 
 
 user: pj4269

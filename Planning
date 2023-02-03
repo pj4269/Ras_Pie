@@ -1,0 +1,40 @@
+
+
+
+Jan 20, 23: Goal:  TB6612FNG didn't work.  L298 code should work pin-for-pin! Make it work. 
+        
+        a) L298: 1 line splitting problem:  1] L298-V1 used 2 GND pins                      -> worked
+                                            2] L298-V2 used board as a connector for 2 pins -> worked. 
+                        ref:  https://dronebotworkshop.com/dc-motor-drivers/
+                                            
+        b) TB6612FNG   : Very complicated hookup!                      : 4.5$  for dual motor     - I have it   
+                       : another ref: https://learn.sparkfun.com/tutorials/tb6612fng-hookup-guide/all                  
+                                      
+        c) DRV8871     : Seems very simple + stronger voltage          : 9.99$ for a single motor -> worked 
+        
+        d) MX1508      :  Simple hookup                                : 1.5$  for a dual motor                      
+  
+        Large motor: 
+        
+        a) BTS7960     : Seems simple                                 : 5$                       - Here
+                       : Someone on amazon review controlled it a ras. pie: but seems very complicated. 
+                       
+        b) Cytron  MD25HV: Very expensive! 59$                                
+         Lesson learned: Prefer simple drivers + Screws rather than plug-ins -> saves so much time. 
+         
+Jan 12, 23: L298 worked. => I understand how it works!
+                        
+          : Once you upload your code into Arduino, you can unplug it from your computer. 
+          : Makes unpleasent noise!
+          
+          : How to split a wire?   https://www.youtube.com/watch?v=2QKkskYnsfs&t=358s
+          
+          
+          Lesson learned: Battery +, - matters!  : GND is Minus -
+          
+Jan 11, 23: Permission denied error=> type =>   ls -l /dev/ttyACM*
+                                                sudo chmod a+rw /dev/ttyACM0
+
+
+
+
