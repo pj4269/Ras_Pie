@@ -1,4 +1,10 @@
 
+Feb 03, 23: To control Arduino from Python file: Use user-input from Python  
+              1) Verify the ".uno" file
+              2) Upload the ".uno" file
+              3) Run the python code
+
+Jan 25, 23: sudo apt install arduino  => installed version 2.1
 
 
 Jan 20, 23: Goal:  TB6612FNG didn't work.  L298 code should work pin-for-pin! Make it work. 
