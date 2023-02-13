@@ -1,6 +1,7 @@
 git init
-# Please tell us who you are
-# git config user.name 'micah'
+# Master branch is for this computer
+# Main branch is for the other computer. 
+# git config user.name 'pj4269'
 # git config user.email 'contact_micah@yahoo.com'
 
 git add .
@@ -11,7 +12,8 @@ git commit -m 'Jan 26, 23' -- Ras_Pie
 #git branch -M "main"
 #git remote add Ras_Pie  https://github.com/pj4269/Ras_Pie.git
 
-git push -u Ras_Pie main
+#git push -u Ras_Pie main # didn't work
+git push --set-upstream Ras_Pie master
 
 
 user: pj4269
