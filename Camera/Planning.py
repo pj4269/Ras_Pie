@@ -1,7 +1,17 @@
+Feb 15, 23:
+    
+    a)    
+    Width, height has default max and min
+    
+    #cap1.set(3,1)  # width
+    #cap1.set(4,1)  # height
+ 
+    b) VideoCapture(N) between 0-N:  depening on how many cameras are inserted
+
+    c) With some cheap cameras, you can't control the size of an image 
 
 Feb 10, 23: 
 
-5. 
 
 4. Test Code: 
 

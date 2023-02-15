@@ -1,7 +1,14 @@
 
 import cv2
+import numpy
 
-cam = cv2.VideoCapture(2)
+cam = cv2.VideoCapture(0)
+'''
+cam.set(cv2.CAP_PROP_FRAME_HEIGHT,120) 
+cam.set(cv2.CAP_PROP_FRAME_WIDTH,120)
+'''
+cam.set(3,400)
+cam.set(4,400)
 
 while True:
   ret, image = cam.read()

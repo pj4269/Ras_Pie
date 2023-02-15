@@ -1,16 +1,19 @@
 import numpy as np
 import cv2
 
-video_capture_0 = cv2.VideoCapture(0)
+video_capture_0 = cv2.VideoCapture(2)
 ''' reduce the frame '''
 
 video_capture_0.set(3,160)
-video_capture_0.set(4,120)
+# video_capture_0.set(4,120)  #  ''' 4, 120 '''
+video_capture_0.set(cv2.CAP_PROP_FRAME_HEIGHT,120) 
 
-video_capture_1 = cv2.VideoCapture(2)
+
+
+video_capture_1 = cv2.VideoCapture(0)
 video_capture_1.set(3,160)
-video_capture_1.set(4,120)
-
+# video_capture_1.set(4,120)  #  ''' 4, 120 '''
+video_capture_1.set(cv2.CAP_PROP_FRAME_HEIGHT,120) 
 
 
 while True:

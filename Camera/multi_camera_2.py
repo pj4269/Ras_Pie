@@ -1,11 +1,40 @@
 import cv2
-cap0 = cv2.VideoCapture(0)
-cap0.set(3,160)
-cap0.set(4,120)
+cap0 = cv2.VideoCapture(0) #  Cam0 size is controled not Cam1
+'''
+cap0.set(cv2.CAP_PROP_FRAME_HEIGHT,12) 
+cap0.set(cv2.CAP_PROP_FRAME_WIDTH,12) 
+'''
+cap0.set(3,200) # width
+cap0.set(4,200) # height
 cap1 = cv2.VideoCapture(2)
-cap1.set(3,160)
-cap1.set(4,120)
-ret0, frame0 = cap0.read()
-assert ret0 # succeeds
-ret1, frame1 = cap1.read()
-assert ret1 # fails?!
+
+w = cap0.get(3)
+h = cap0.get(4)
+print (w,h)
+'''
+cap1.set(cv2.CAP_PROP_FRAME_HEIGHT,400) 
+cap1.set(cv2.CAP_PROP_FRAME_WIDTH,400) 
+'''
+cap1.set(3,200)  # width
+cap1.set(4,200)  # height
+'''cap1.resize()'''
+w = cap1.get(3)
+h = cap1.get(4)
+print (w,h, cv2.__version__)
+
+
+
+while True:
+  ret0, frame0 = cap0.read()
+  ret1, frame1 = cap1.read()
+
+  if (ret0):
+    # Display the resulting frame
+    cv2.imshow('Cam 0', frame0)
+
+  if (ret1):
+    # Display the resulting frame
+    cv2.imshow('Cam 1', frame1)
+
+  if cv2.waitKey(1) & 0xFF == ord('q'):
+    break
