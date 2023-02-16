@@ -1,4 +1,7 @@
 import cv2
+
+frame_size = (224, 224)
+
 cap0 = cv2.VideoCapture(0) #  Cam0 size is controled not Cam1
 '''
 cap0.set(cv2.CAP_PROP_FRAME_HEIGHT,12) 
@@ -30,10 +33,13 @@ while True:
 
   if (ret0):
     # Display the resulting frame
+    # 1st try: Works!
+    frame0 = cv2.resize( frame0, frame_size)
     cv2.imshow('Cam 0', frame0)
 
   if (ret1):
     # Display the resulting frame
+    frame1 = cv2.resize( frame1, frame_size)    
     cv2.imshow('Cam 1', frame1)
 
   if cv2.waitKey(1) & 0xFF == ord('q'):
