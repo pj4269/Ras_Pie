@@ -25,7 +25,7 @@ time.sleep(2.0)
 # initialize the two motion detectors, along with the total
 # number of frames read
 camMotion = BasicMotionDetector()
-piMotion = BasicMotionDetector()
+piMotion =  BasicMotionDetector()
 total = 0
 
 # loop over frames from the video streams
