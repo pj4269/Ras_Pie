@@ -28,10 +28,10 @@ print (w,h, cv2.__version__)
 ''' VideoStream uses VideoCapture but runs on a thread so it can run faster!'''
 from imutils.video import VideoStream
 
-'''
-webcam1 = VideoStream(src=0).start()
-webcam2 = VideoStream(src=2).start()
-'''
+
+# webcam1 = VideoStream(src=0).start()
+# webcam2 = VideoStream(src=2).start()
+
 
 while True:
   ret0, frame0 = cap0.read()
@@ -50,3 +50,4 @@ while True:
 
   if cv2.waitKey(1) & 0xFF == ord('q'):
     break
+

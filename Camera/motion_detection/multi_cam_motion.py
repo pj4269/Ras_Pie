@@ -2,7 +2,8 @@
 from __future__ import print_function
 # from pyimagesearch.basicmotiondetector import BasicMotionDetector
 from imutils.video import VideoStream
-import BasicMotionDetector
+# import BasicMotionDetector
+from BasicMotionDetector import BasicMotionDetector
 import numpy as np
 import datetime
 import imutils
@@ -15,11 +16,12 @@ import cv2
 
 # initialize the video streams and allow them to warmup
 print("[INFO] starting cameras...")
-# webcam = VideoStream(src=0).start()
-# picam = VideoStream(usePiCamera=True).start()
-
+#webcam = VideoStream(src=0).start()
+# picam = VideoStream(usePiCamera=True).start() # if you don't want picmera
+#picam = VideoStream(src=2).start()
 webcam1 = VideoStream(src=0).start()
 webcam2 = VideoStream(src=2).start()
+
 
 time.sleep(2.0)
 # initialize the two motion detectors, along with the total
@@ -28,16 +30,22 @@ camMotion = BasicMotionDetector()
 piMotion =  BasicMotionDetector()
 total = 0
 
+
 # loop over frames from the video streams
 while True:
   # initialize the list of frames that have been processed
   frames = []
   # loop over the frames and their respective motion detectors
+
+'''
   for (stream, motion) in zip((webcam1, webcam2), (camMotion, piMotion)):
     # read the next frame from the video stream and resize it to have a maximum width of 400 pixels
     frame = stream.read()
     frame = imutils.resize(frame, width=400)
     # convert the frame to grayscale, blur it slightly, update the motion detector
+    #cv2.imshow('Cam 0', frame)
+
+    
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     gray = cv2.GaussianBlur(gray, (21, 21), 0)
     locs = motion.update(gray)
@@ -48,8 +56,7 @@ while True:
     
     # otherwise, check to see if motion was detected
     if len(locs) > 0:
-      # initialize the minimum and maximum (x, y)-coordinates,
-      # respectively
+      # initialize the minimum and maximum (x, y)-coordinates respectively
       (minX, minY) = (np.inf, np.inf)
       (maxX, maxY) = (-np.inf, -np.inf)
       # loop over the locations of motion and accumulate the
@@ -77,11 +84,14 @@ while True:
     # if the `q` key was pressed, break from the loop
     if key == ord("q"):
       break
+'''    
 # do a bit of cleanup
 print("[INFO] cleaning up...")
 cv2.destroyAllWindows()
-webcam.stop()
-picam.stop()    
+webcam1.stop()
+webcam2.stop()
+
+# picam.stop()    
     
     
     
